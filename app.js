@@ -198,5 +198,17 @@ app.get('/api/orders', async (req, res) => {
   res.json(await Order.find({ userId: user._id }).sort({ createdAt: -1 }));
 });
 
+// ------------------------------------------------------------
+//  SERVE THE BUILT REACT APP
+//  Used when running locally (node server.js) after `npm run build`.
+//  On Vercel, the CDN serves these files and only /api hits this code.
+// ------------------------------------------------------------
+const distPath = path.join(__dirname, 'dist');
+app.use(express.static(distPath));
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api')) return res.status(404).json({ error: 'Not found' });
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
 module.exports = app;
 module.exports.connectDB = connectDB;   // handy for local startup

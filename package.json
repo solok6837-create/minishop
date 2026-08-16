@@ -1,14 +1,25 @@
 {
-  "name": "ecommerce-store",
-  "version": "1.0.0",
-  "description": "A simple e-commerce store built with Express.js",
+  "name": "minishop",
+  "version": "2.0.0",
+  "private": true,
+  "description": "MiniShop — React + Express + MongoDB e-commerce store",
   "main": "server.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.9.2"
+    "mongoose": "^9.9.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
   }
 }

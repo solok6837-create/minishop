@@ -1,6 +1,9 @@
 # Node dependencies (Vercel installs these automatically)
 node_modules/
 
+# Build output (Vercel rebuilds this from source)
+dist/
+
 # Environment secrets — never upload these
 .env
 .env.local
