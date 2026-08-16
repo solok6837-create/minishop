@@ -1,0 +1,15 @@
+# Node dependencies (Vercel installs these automatically)
+node_modules/
+
+# Environment secrets — never upload these
+.env
+.env.local
+
+# Vercel local files
+.vercel
+
+# Old local database folder (not used anymore)
+mongodb-data/
+
+# Old file-based database from the first version
+db.json
